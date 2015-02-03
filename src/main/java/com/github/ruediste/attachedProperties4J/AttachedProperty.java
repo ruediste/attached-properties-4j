@@ -8,6 +8,17 @@ import java.util.function.Supplier;
  * {@link AttachedPropertyBearer}
  */
 public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
+	
+	private final String name;
+
+	public AttachedProperty() {
+		name="<unnamed>";
+	}
+	
+	public AttachedProperty(String name) {
+		this.name = name;
+	}
+	
 	/**
 	 * Return the value associated with the bearer. If the property is not set,
 	 * null is returned. To determine if a property is set, use
@@ -72,5 +83,13 @@ public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
 				return get(bearer);
 			}
 		}
+	}
+	public String getName() {
+		return name;
+	}
+	
+	@Override
+	public String toString(){
+		return name;
 	}
 }

@@ -38,6 +38,13 @@ public class AttachedPropertyMap {
 		return map.hashCode();
 	}
 	
+	public void putAll(AttachedPropertyBearer other){
+		putAll(other.getAttachedPropertyMap());
+	}
+	
+	public void putAll(AttachedPropertyMap other){
+		map.putAll(other.map);
+	}
 	@Override
 	public boolean equals(Object obj) {
 		if (obj==this)
