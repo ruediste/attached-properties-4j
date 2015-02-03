@@ -32,6 +32,9 @@ public class AttachedPropertyMap {
 	synchronized boolean isSet(AttachedProperty<?, ?> key) {
 		return map.containsKey(key);
 	}
+	public synchronized void clearAll() {
+		map.clear();
+	}
 
 	@Override
 	public int hashCode() {
