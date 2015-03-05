@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  * A map for attached properties. Instances of this class can be constructed and
- * managed by classes of other modules, but the methods are not accessible,
+ * managed by classes of other packages, but most methods are not accessible,
  * since they are intended to be used through {@link AttachedProperty}
  * instances.
  *
