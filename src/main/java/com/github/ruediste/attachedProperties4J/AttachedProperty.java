@@ -2,27 +2,26 @@ package com.github.ruediste.attachedProperties4J;
 
 import java.util.function.Supplier;
 
-
 /**
  * Identifies a property which can be attached to any
  * {@link AttachedPropertyBearer}
  */
 public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
-	
+
 	private final String name;
 
 	public AttachedProperty() {
-		name="<unnamed>";
+		name = "<unnamed>";
 	}
-	
+
 	public AttachedProperty(String name) {
 		this.name = name;
 	}
-	
+
 	/**
 	 * Return the value associated with the bearer. If the property is not set,
 	 * null is returned. To determine if a property is set, use
-	 * {@link #isSet(Bearer)}
+	 * {@link #isSet(AttachedPropertyBearer)}
 	 */
 	public T get(Bearer bearer) {
 		return bearer.getAttachedPropertyMap().get(this);
@@ -30,8 +29,8 @@ public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
 
 	/**
 	 * Set the value associated with the bearer. Note that setting a property to
-	 * null does not clear the property. Use {@link #clear(Bearer)} for that
-	 * purpose.
+	 * null does not clear the property. Use
+	 * {@link #clear(AttachedPropertyBearer)} for that purpose.
 	 */
 	public void set(Bearer bearer, T value) {
 		bearer.getAttachedPropertyMap().set(this, value);
@@ -39,7 +38,7 @@ public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
 
 	/**
 	 * Clear the property on the bearer. After calling this method,
-	 * {@link #isSet(Bearer)} will return false.
+	 * {@link #isSet(AttachedPropertyBearer)} will return false.
 	 */
 	public void clear(Bearer bearer) {
 		bearer.getAttachedPropertyMap().clear(this);
@@ -84,12 +83,13 @@ public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
 			}
 		}
 	}
+
 	public String getName() {
 		return name;
 	}
-	
+
 	@Override
-	public String toString(){
+	public String toString() {
 		return name;
 	}
 }
