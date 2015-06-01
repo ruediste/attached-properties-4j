@@ -31,6 +31,7 @@
 		<url>git@github.com:ruediste/attached-properties-4j.git</url>
 		<tag>HEAD</tag>
 	</scm>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -72,11 +73,17 @@
 		<profile>
 			<id>release</id>
 			<distributionManagement>
+
 				<snapshotRepository>
 					<id>ossrh</id>
 					<url>https://oss.sonatype.org/content/repositories/snapshots</url>
 				</snapshotRepository>
+				<repository>
+					<id>ossrh</id>
+					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+				</repository>
 			</distributionManagement>
+
 			<build>
 				<plugins>
 					<plugin>
@@ -87,6 +94,7 @@
 						<configuration>
 							<serverId>ossrh</serverId>
 							<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+							<autoReleaseAfterClose>true</autoReleaseAfterClose>
 						</configuration>
 					</plugin>
 					<plugin>

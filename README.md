@@ -1,6 +1,40 @@
 # attached-properties-4j
 Java library to attach properties to objects.
 
+## Setup
+To use the latest release, add 
+
+    <dependency>
+        <groupId>com.github.ruediste</groupId>
+        <artifactId>attached-properties-4j</artifactId>
+        <version>0.0.1</version>
+    </dependency>
+
+to your `pom.xml`. To use the latest snapshot version, add
+
+	<repositories>
+		<repository>
+			<id>oss.sonatype.org-snapshot</id>
+			<url>http://oss.sonatype.org/content/repositories/snapshots</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+	     	</snapshots>
+		</repository>
+	</repositories>
+	...
+	<dependencies>
+		<dependency>
+			<groupId>com.github.ruediste</groupId>
+			<artifactId>attached-properties-4j</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+to your `pom.xml`.
+
 ## Usage
 To attach properties to an object, the class of the object has to implement **AttachedPropertyBearer**. Then instantiate **AttachedProperties** and typically store them in static final fields. Afterwards, you can set the property on an object.
 
@@ -44,3 +78,10 @@ Finally, put the release to the central repository by
 	mvn nexus-staging:release -P release
 
 Last but not least, do not forget to bump the versions in the examples in this file.
+
+### Deploying Snapshots
+When the `~/.m2/settings.xml` is present, a simple
+
+    mvn clean deploy -Prelease
+
+will deploy a snapshot release to the sontatype snaphshot repository.
