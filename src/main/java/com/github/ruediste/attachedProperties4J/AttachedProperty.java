@@ -52,7 +52,7 @@ public class AttachedProperty<Bearer extends AttachedPropertyBearer, T> {
 	}
 
 	/**
-	 * Set a property to the specified value if it is not set.
+	 * Set a property to the specified value if it is not set. Thread safe
 	 *
 	 * @return the current value of the property
 	 */
