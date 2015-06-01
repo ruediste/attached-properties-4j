@@ -6,8 +6,8 @@ package com.github.ruediste.attachedProperties4J;
  */
 public interface AttachedPropertyBearer {
 
-	/**
-	 * Return the property map associated with this property bearer.
-	 */
-	AttachedPropertyMap getAttachedPropertyMap();
+    /**
+     * Return the property map associated with this property bearer.
+     */
+    AttachedPropertyMap getAttachedPropertyMap();
 }

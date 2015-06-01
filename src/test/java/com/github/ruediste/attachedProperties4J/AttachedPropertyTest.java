@@ -9,24 +9,24 @@ import org.junit.Test;
 
 public class AttachedPropertyTest {
 
-	private class TestBearer extends AttachedPropertyBearerBase {
+    private class TestBearer extends AttachedPropertyBearerBase {
 
-	}
+    }
 
-	private final static AttachedProperty<TestBearer, String> test = new AttachedProperty<>(
-			"test");
-	private TestBearer bearer;
+    private final static AttachedProperty<TestBearer, String> test = new AttachedProperty<>(
+            "test");
+    private TestBearer bearer;
 
-	@Before
-	public void before() {
-		bearer = new TestBearer();
-	}
+    @Before
+    public void before() {
+        bearer = new TestBearer();
+    }
 
-	@Test
-	public void canSet() {
-		assertFalse(test.isSet(bearer));
-		test.set(bearer, "Hello");
-		assertTrue(test.isSet(bearer));
-		assertEquals("Hello", test.get(bearer));
-	}
+    @Test
+    public void canSet() {
+        assertFalse(test.isSet(bearer));
+        test.set(bearer, "Hello");
+        assertTrue(test.isSet(bearer));
+        assertEquals("Hello", test.get(bearer));
+    }
 }
