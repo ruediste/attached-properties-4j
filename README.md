@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ruediste/attached-properties-4j.svg?branch=master)](https://travis-ci.org/ruediste/attached-properties-4j)
+
 # attached-properties-4j
 Java library to attach properties to objects.
 
