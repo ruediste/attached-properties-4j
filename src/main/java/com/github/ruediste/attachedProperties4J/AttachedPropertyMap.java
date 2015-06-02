@@ -15,7 +15,7 @@ import java.util.HashMap;
 public class AttachedPropertyMap {
 
     private HashMap<AttachedProperty<?, ?>, Object> map = new HashMap<AttachedProperty<?, ?>, Object>();
-    boolean frozen = false;
+    private boolean frozen = false;
 
     @SuppressWarnings("unchecked")
     synchronized <T> T get(AttachedProperty<?, T> key) {
@@ -42,6 +42,9 @@ public class AttachedPropertyMap {
         return map.containsKey(key);
     }
 
+	/**
+	 * Clear all properties attached to this map.
+	 */
     public synchronized void clearAll() {
         checkNotFrozen();
         map.clear();
